@@ -1,0 +1,72 @@
+using System;
+using System.Diagnostics;
+using System.IO;
+using System.Net;
+
+namespace Bootstrapper
+{
+    class Program
+    {
+        static string[] files = new string[]
+        {
+            "https://raw.githubusercontent.com/pasteisback/Xploit/refs/heads/main/Xploit.zip"
+        };
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Version: 1.0.0");
+            string updatedDir = Path.Combine(Environment.CurrentDirectory, "Xploit");
+            if (!Directory.Exists(updatedDir))
+            {
+                Directory.CreateDirectory(updatedDir);
+            }
+
+            Console.Title = "Xploit Updater";
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            foreach (Process process in Process.GetProcessesByName("Bypass"))
+            {
+                process.Kill();
+            }
+
+            Console.WriteLine("Downloading");
+
+            foreach (string file in files)
+            {
+                try
+                {
+                    Console.WriteLine("Writing...");
+                    string fileName = Path.GetFileName(file.Split('?')[0]);
+                    string filePath = Path.Combine(updatedDir, fileName);
+
+                    Console.WriteLine("Creating Files...");
+                    using (WebClient client = new WebClient())
+                    {
+                        client.DownloadFile(new Uri(file), filePath);
+                    }
+
+                    Console.WriteLine($"Successfully downloaded: {fileName}");
+                }
+                catch (IOException ex)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine($"Error downloading file: {ex.Message}");
+                    Console.ResetColor();
+                }
+                catch (Exception ex)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine($"Unexpected error: {ex.Message}");
+                    Console.ResetColor();
+                }
+            }
+
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Successfully downloaded Xploit!");
+            Console.WriteLine("Happy Xploiting!");
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.WriteLine("Press any key to close");
+            Console.ReadKey();
+            Environment.Exit(0);
+        }
+    }
+}
