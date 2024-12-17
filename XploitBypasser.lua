@@ -1,6 +1,6 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
-local Window = OrionLib:MakeWindow({Name = "Xploit Bypasser", HidePremium = false, SaveConfig = true, ConfigFolder = "BypasserChat"})
+local Window = OrionLib:MakeWindow({Name = "Xploit Bypasser", HidePremium = false, SaveConfig = true, ConfigFolder = "XploitBypasser"})
 
 local Tab = Window:MakeTab({
 	Name = "ChatBypasser",
