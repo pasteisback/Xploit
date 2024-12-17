@@ -1,0 +1,166 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+local Window = OrionLib:MakeWindow({Name = "XploitArsenal", HidePremium = false, SaveConfig = true, ConfigFolder = "XploitArsenal"})
+
+local ATab = Window:MakeTab({
+	Name = "Aimbot",
+	Icon = "",
+	PremiumOnly = false
+})
+
+local ETab = Window:MakeTab({
+	Name = "ESP",
+	Icon = "",
+	PremiumOnly = false
+})
+
+local WTab = Window:MakeTab({
+	Name = "Gun Mods",
+	Icon = "",
+	PremiumOnly = false
+})
+
+local PTab = Window:MakeTab({
+	Name = "Character",
+	Icon = "",
+	PremiumOnly = false
+})
+
+local STab = Window:MakeTab({
+	Name = "Settings",
+	Icon = "",
+	PremiumOnly = false
+})
+
+OrionLib:MakeNotification({
+	Name = "Xploit",
+	Content = "Thanks for supporting Xploit!",
+	Image = "",
+	Time = 10
+})
+
+_G.sizeof = 55
+_G.AimOn = false
+_G.TeamCheckOn = true
+_G.Aimpart = "Head"
+_G.Sensitivity = 0.03
+_G.CircleSides = 64
+_G.CircleColor = Color3.fromRGB(255, 255, 255)
+_G.CircleVisible = true
+_G.fovTransparency = 0
+
+ATab:AddButton({
+	Name = "Aimbot",
+	Callback = function()
+        if AimOn == false then
+            AimOn = true
+            _G.fovTransparency = 1
+        else do
+            AimOn = false
+            _G.fovTransparency = 0
+            end
+        end
+  	end    
+})
+
+ATab:AddButton({
+	Name = "Slient-Aim",
+	Callback = function()
+        function getplrsname()
+            for i,v in pairs(game:GetChildren()) do
+                if v.ClassName == "Players" then
+                    return v.Name
+                end
+            end
+        end
+        local players = getplrsname()
+        local plr = game[players].LocalPlayer
+        coroutine.resume(coroutine.create(function()
+            while  wait(1) do
+                coroutine.resume(coroutine.create(function()
+                    for _,v in pairs(game[players]:GetPlayers()) do
+                        if v.Name ~= plr.Name and v.Character then
+                            v.Character.RightUpperLeg.CanCollide = false
+                            v.Character.RightUpperLeg.Transparency = 10
+                            v.Character.RightUpperLeg.Size = Vector3.new(13,13,13)
+    
+                            v.Character.LeftUpperLeg.CanCollide = false
+                            v.Character.LeftUpperLeg.Transparency = 10
+                            v.Character.LeftUpperLeg.Size = Vector3.new(13,13,13)
+    
+                            v.Character.HeadHB.CanCollide = false
+                            v.Character.HeadHB.Transparency = 10
+                            v.Character.HeadHB.Size = Vector3.new(13,13,13)
+    
+                            v.Character.HumanoidRootPart.CanCollide = false
+                            v.Character.HumanoidRootPart.Transparency = 10
+                            v.Character.HumanoidRootPart.Size = Vector3.new(13,13,13)
+    
+                        end
+                    end
+                end))
+            end
+        end))
+  	end    
+})
+
+ETab:AddButton({
+	Name = "ESP",
+	Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/pasteisback/Xploit/refs/heads/main/ActualESP"))()
+    end
+})
+
+WTab:AddButton({
+	Name = "Recoil Cheat",
+	Callback = function()
+        local replicationstorage = game.ReplicatedStorage
+ 
+        while wait(5) do
+            
+        for i, v in pairs(replicationstorage.Weapons:GetDescendants()) do
+            if v.Name == "RecoilControl" then
+                v.Value = 0
+            end
+            if v.Name == "MaxSpread" then
+                v.Value = 0
+            end
+    
+            end
+        end
+  	end    
+})
+
+WTab:AddButton({
+	Name = "Ammo Cheat",
+	Callback = function()
+        local replicationstorage = game.ReplicatedStorage
+
+        while wait() do
+           game:GetService("Players").LocalPlayer.PlayerGui.GUI.Client.Variables.ammocount.Value = 999
+           game:GetService("Players").LocalPlayer.PlayerGui.GUI.Client.Variables.ammocount2.Value = 999
+      end
+  	end    
+})
+
+WTab:AddButton({
+	Name = "Fire Rate Cheat",
+	Callback = function()
+        local replicationstorage = game.ReplicatedStorage
+ 
+        while wait(5) do
+            
+        for i, v in pairs(replicationstorage.Weapons:GetDescendants()) do
+            if v.Name == "Auto" then
+                v.Value = true
+            end
+            if v.Name == "FireRate" then
+                v.Value = 0.02
+            end
+        end
+
+        end
+  	end    
+})
+
+OrionLib:Init()
