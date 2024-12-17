@@ -2,7 +2,7 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shl
 
 local version = "1.0.0"
 
-local Window = OrionLib:MakeWindow({Name = "Xploit Hub v"..version, HidePremium = false, SaveConfig = true, ConfigFolder = "XploitHub"})
+local Window = OrionLib:MakeWindow({Name = "Xploit PrisonLife v"..version, HidePremium = false, SaveConfig = true, ConfigFolder = "XploitPrisonLife"})
 
 local Tab = Window:MakeTab({
 	Name = "Prison Life",
