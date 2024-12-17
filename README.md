@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="assets/icon.png" />
+  <img src="XploitLogo.png" />
   <h1>Xploit</h1>
 </div>
 
