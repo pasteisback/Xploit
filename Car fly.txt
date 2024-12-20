@@ -1,4 +1,4 @@
-local FlyKey = Enum.KeyCode.V
+local FlyKey = Enum.KeyCode.M
         local SpeedKey = Enum.KeyCode.LeftControl
         
         local SpeedKeyMultiplier = 3
@@ -80,14 +80,14 @@ local FlyKey = Enum.KeyCode.V
             if userInput.KeyCode == FlyKey then
                 if Connection then
                     StarterGui:SetCore("SendNotification",{
-                        Title = "Car Fly",
+                        Title = "Xploits Mods",
                         Text = "Flight disabled"
                     })
                     Connection:Disconnect()
                     Connection = nil
                 else
                     StarterGui:SetCore("SendNotification",{
-                        Title = "Car Fly",
+                        Title = "Xploits Mods",
                         Text = "Flight enabled"
                     })
                     CurrentVelocity = UserRootPart.Velocity
@@ -97,6 +97,11 @@ local FlyKey = Enum.KeyCode.V
         end)
         
         StarterGui:SetCore("SendNotification",{
-            Title = "Xploits Car Fly",
-            Text = "Loaded successfully, Press V to toggle"
+            Title = "Xploits Mods",
+            Text = "Loaded successfully, Press M to toggle"
+        })
+
+StarterGui:SetCore("SendNotification",{
+            Title = "Xploits Mods",
+            Text = "You can use this as a speed hack, fly, or car fly."
         })
