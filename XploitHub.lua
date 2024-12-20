@@ -94,7 +94,7 @@ UTab:AddButton({
 UTab:AddButton({
 	Name = "Car fly/fly/speed hack",
 	Callback = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/pasteisback/Xploit/refs/heads/main/Car%20fly.txt"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/pasteisback/Xploit/refs/heads/main/XploitHumanoidMods"))()
         Notif("Made by me!")
   	end    
 })
