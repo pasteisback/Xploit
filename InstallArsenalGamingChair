@@ -1,0 +1,10 @@
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/pasteisback/Xploit/refs/heads/main/SlientAim
+wait(0.5)
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/pasteisback/Xploit/refs/heads/main/ArsenalESP')))()
+wait(0.5)
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/pasteisback/Xploit/refs/heads/main/AmmoMod')))()
+wait(0.5)
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/pasteisback/Xploit/refs/heads/main/RecoilMod')))()
+wait(0.5)
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/pasteisback/Xploit/refs/heads/main/FireRateMod')))()
+print("gaming chair installed")
