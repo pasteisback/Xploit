@@ -143,6 +143,14 @@ Tab:AddButton({
 })
 
 Tab:AddButton({
+	Name = "Invis",
+	Callback = function()
+        Notif("made by me")
+		loadstring(game:HttpGet(('https://raw.githubusercontent.com/pasteisback/Xploit/refs/heads/main/fe%20invisible')))()
+  	end
+})
+
+Tab:AddButton({
 	Name = "Fly",
 	Callback = function()
         Notif("credits to iy devs.")
